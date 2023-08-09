@@ -9,7 +9,10 @@ generator client {
 }
 
 model Star {
-  id      String  @id @default(uuid())
+  id      String  @default(uuid())
   amount  Int     @default(0)
   hash    String  @db.VarChar(255)
+
+  @@id([id])
+  @@index([amount])
 }
